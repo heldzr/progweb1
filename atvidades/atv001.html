@@ -1,0 +1,24 @@
+<script>
+    function verificarImput(imput) {
+        if (typeof imput === 'number') {
+            if (imput % 2 == 0){
+                return document.write('A entrada é um numero par!')
+            } else {
+                return document.write('A entrada é um numero ímpar!')
+            }
+        } else if (typeof imput === 'string') {
+            return document.write('A entrada é uma string!')
+        } else {
+            return document.write('A entrada não é nem numero nem string')
+        }
+    }
+
+    while (true){
+        let entrada = prompt('Digite um valor ou texto (para finalizar digite "sair"): ')
+        if (entrada === 'sair' || entrada == null){
+            break;
+        }
+        verificarImput(entrada);
+    }
+    
+</script>

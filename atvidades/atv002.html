@@ -1,0 +1,42 @@
+<script>
+    function calculadora (func, num1=0, num2=0){
+        if (typeof func === 'function'){
+            return func(num1,num2)
+        }
+    }
+    function soma(a, b){
+        return a + b;
+    }
+    function sub(a, b){
+        return a - b;
+    }
+    function mult(a, b){
+        return a * b
+    }
+    function div(a, b){
+        if (b == 0){
+            return 'valor inválido, digite outro valor'
+        }
+        return a / b;
+    }
+    
+    var valor1=0, valor2=0;
+    while (true){
+        let operacao = prompt('Informe qual operacao voce vai realizar (1 - soma, 2 - subtracao, 3 - multiplicacao ou 4 - divisao, para finalizar digite "sair"): ')
+        if (operacao === 'sair' || operacao == null){
+            break;
+        } 
+        valor1 = parseFloat(prompt('Digite um valor: '))
+        valor2 = parseFloat(prompt('Digite um valor: '))
+        if (operacao == '1'){
+            document.write(calculadora(soma, valor1, valor2));
+        } else if (operacao == '2'){
+            document.write(calculadora(sub, valor1, valor2));
+        } else if (operacao == '3'){
+            document.write(calculadora(mult, valor1, valor2));
+        } else if (operacao === '4'){
+            document.write(calculadora(div, valor1, valor2));
+        } 
+    }
+
+</script>
